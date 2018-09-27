@@ -33,9 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:back_color="@color/colorAccent"
-        app:stroke_color="@color/colorPrimary"
+        app:stroke_color="#000000"
         app:round_raduis="20dp"
         app:stroke_with="1dp"
+        app:button_color="#000000"
+        app:button_size="20dp"
+        app:button_stroke_size="2dp"
         />
 
 </android.support.constraint.ConstraintLayout>
