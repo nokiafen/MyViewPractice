@@ -210,7 +210,7 @@ public class ExpandleableView  extends RelativeLayout{
     }
 
 
-    private  boolean isExpand=true;
+    private  boolean isExpand=false;
     private  float buttonIconDegrees=0; //旋转度数
     private class ExpandMenuAnim extends Animation {
         public ExpandMenuAnim() {}
@@ -221,10 +221,12 @@ public class ExpandleableView  extends RelativeLayout{
             super.applyTransformation(interpolatedTime, t);
             if(isExpand){//展开菜单
                 buttonIconDegrees = 90-90 * interpolatedTime;
-                layout(normalLeft,normalTop, (int)(viewWith-maxChangedWith*interpolatedTime),viewHeight);
+                Log.d("Anim","normalleft:"+normalLeft+"normaltop:"+normalTop);
+                layout(normalLeft,normalTop,normalLeft+ (int)(viewWith-maxChangedWith*interpolatedTime),normalTop+viewHeight);
             }else {//收起菜单
                 buttonIconDegrees =  90 * interpolatedTime;
-                layout(normalLeft,normalTop, (int)(minWith+maxChangedWith*interpolatedTime),viewHeight);
+                Log.d("Anim","normalleft:"+normalLeft+"normaltop:"+normalTop);
+                layout(normalLeft,normalTop, normalLeft+(int)(minWith+maxChangedWith*interpolatedTime),normalTop+viewHeight);
             }
 
 
@@ -233,10 +235,24 @@ public class ExpandleableView  extends RelativeLayout{
         }
     }
 
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        Log.d("onLayout","l:"+l+"t:"+t);
+        super.onLayout(changed, l, t, r, b);
+        int childCount=getChildCount();
+        if (childCount>=1) {
+            View chidView=getChildAt(0);
+            if (!isExpand) {
+                chidView.setVisibility(View.VISIBLE);
+                LayoutParams layoutParams =new LayoutParams(viewWith,viewHeight);
+                layoutParams.setMargins((int) roundRaduis+halfBWith,0,(int) roundRaduis,0);
+                chidView.setLayoutParams(layoutParams);
+                chidView.layout((int)(2*roundRaduis),0,(int)(viewWith-roundRaduis-halfBWith),viewHeight);
+            }else {
+                chidView.setVisibility(View.GONE);
+            }
+        }
 
-
-
-
-
+        }
 
 }
