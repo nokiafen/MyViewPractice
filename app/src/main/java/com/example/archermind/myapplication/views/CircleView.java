@@ -52,6 +52,6 @@ public class CircleView extends View{
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(2);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.parseColor("#00bcd4"));
     }
 }

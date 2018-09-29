@@ -6,8 +6,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
+
+import com.example.archermind.myapplication.R;
+import com.example.archermind.myapplication.viewbean.FallObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by archermind on 18-9-28.
@@ -47,14 +52,23 @@ public class Fallview extends  View{
 //        fan_color=typedArray.getColor(R.styleable.FanView_fan_color,Color.GRAY);
         snowY=Utils.dp2px(getContext(),5);
 
-    }
 
+    }
+    List<FallObject> fallviewList;
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         viewWith=  measureSelf(widthMeasureSpec,defaultWith );
         viewHeight=  measureSelf(heightMeasureSpec,defaultHeight );
         setMeasuredDimension(viewWith,viewHeight);
+
+         fallviewList=new ArrayList<>();
+        for (int i = 0; i <100 ; i++) {
+            FallObject fallObject=new FallObject.Builder().drawable(getResources().getDrawable(R.mipmap.nut)).build();
+            fallObject.initSnow(viewWith,viewHeight,getContext());
+            fallviewList.add(fallObject);
+        }
+
     }
 
     private int measureSelf(int measureSpec,int defaultValue) {
@@ -77,23 +91,25 @@ int snowY;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.BLUE);
+        canvas.drawColor(Color.parseColor("#2196f3"));
         paint.setColor(Color.WHITE);
-        canvas.drawCircle(Utils.dp2px(getContext(),10),snowY,Utils.dp2px(getContext(),2),paint);
-        Log.d("tt","ss");
+//        canvas.drawCircle(Utils.dp2px(getContext(),10),snowY,Utils.dp2px(getContext(),2),paint);
+//        Log.d("tt","ss");
+        for (FallObject fallObject : fallviewList) {
+            fallObject.drawCanvas(canvas,paint);
+        }
 
-
-        getHandler().postDelayed(runnable,100);
+        getHandler().postDelayed(runnable,50);
     }
 
     private Runnable runnable=new Runnable() {
         @Override
         public void run() {
-                  if (snowY<viewHeight){
-                      snowY+=Utils.dp2px(getContext(),8);
-                  }else {
-                      snowY=Utils.dp2px(getContext(),5);
-                  }
+//                  if (snowY<viewHeight){
+//                      snowY+=Utils.dp2px(getContext(),8);
+//                  }else {
+//                      snowY=Utils.dp2px(getContext(),5);
+//                  }
              invalidate();
         }
     };
