@@ -8,4 +8,7 @@
     <color name="accent_material_light">#960014</color>
     <color name="background_material_light">#fafafa</color>
     <color name="foreground_material_light">#000000</color>
+    <color name="blue">#03a9f4</color>
+    <color name="color_qin">#e4e4</color>
+    <color name="color_dblue">#00bcd4</color>
 </resources>
