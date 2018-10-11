@@ -12,7 +12,7 @@
     <color name="color_qin">#e4e4</color>
     <color name="color_dblue">#00bcd4</color>
     <color name="line_color">#EEEEEE</color>
-
+    <color name="color_white_90">#E6FFFFFF</color>
 
     <color name="tab_color_true">#FF391B</color>
     <color name="tab_color_false">#9b9b9b</color>

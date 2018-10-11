@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#e3e3e3"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        ></android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+           android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/lin_content"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_search_white_bg"
+            >
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:id="@+id/edit"
+                android:background="@null"
+                />
+
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/iv_avar"
+            android:background="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_scan"
+            android:background="@mipmap/icon_bar_search"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_alignParentBottom="true"
+        android:onClick="left"
+        android:text="left"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="right"
+        android:text="right"
+        />
+
+
+    <com.example.archermind.myapplication.views.ExpandleableView
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text"
+        app:layout_constraintBottom_toTopOf="@+id/circle1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:back_color="#f44336"
+        app:stroke_color="#000000"
+        app:round_raduis="20dp"
+        app:stroke_with="1dp"
+        app:button_color="#000000"
+        app:button_size="20dp"
+        app:button_stroke_size="2dp"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_centerHorizontal="true"
+        >
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="1"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:background="@color/blue"
+                    />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="3"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:background="@color/color_qin"
+                    />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="4"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:background="@color/color_dblue"
+                    />
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+    </com.example.archermind.myapplication.views.ExpandleableView>
+
+</RelativeLayout>
