@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            >
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+               android:src="@mipmap/timg"
+                android:scaleType="fitXY"
+                android:id="@+id/imageView"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.8"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:layout_marginTop="250dp"
+                    android:text="function"
+                    android:background="@color/color_qin"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.5"
+                    />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:alpha="1"
+                    android:background="@android:color/white"
+                    android:tag="toolbar"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/Widget.AppCompat.Toolbar" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="hellotitle"
+                    android:gravity="center"
+                    android:layout_height="50dp"
+                    android:id="@+id/tv_title"
+                    android:background="@color/blue"
+                    app:layout_collapseMode="pin"
+                    />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="MainActivity"
+                    android:gravity="center"
+                    android:onClick="toMainActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="RevealActivity"
+                    android:gravity="center"
+                    android:onClick="toRevealActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="AnimTestActivity"
+                    android:onClick="toAnimTestActivity"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="SlidingConfictActivity"
+                    android:gravity="center"
+                    android:onClick="toSlidingConfictActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="MainActivity"
+                    android:gravity="center"
+                    android:onClick="toMainActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="RevealActivity"
+                    android:gravity="center"
+                    android:onClick="toRevealActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="AnimTestActivity"
+                    android:onClick="toAnimTestActivity"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="SlidingConfictActivity"
+                    android:gravity="center"
+                    android:onClick="toSlidingConfictActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="MainActivity"
+                    android:gravity="center"
+                    android:onClick="toMainActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="RevealActivity"
+                    android:gravity="center"
+                    android:onClick="toRevealActivity"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="AnimTestActivity"
+                    android:onClick="toAnimTestActivity"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="SlidingConfictActivity"
+                    android:gravity="center"
+                    android:onClick="toSlidingConfictActivity"
+                    />
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</android.support.constraint.ConstraintLayout>
