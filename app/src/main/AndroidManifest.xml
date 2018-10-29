@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.example.archermind.myapplication.MainActivity">
+        </activity>
+
+        <activity android:name="com.example.archermind.myapplication.RevealActivity">
+        </activity>
+
+        <activity android:name="com.example.archermind.myapplication.AnimTestActivity">
+        </activity>
+
+        <activity android:name="com.example.archermind.myapplication.SldingConfictActivity">
+        </activity>
     </application>
 
 </manifest>

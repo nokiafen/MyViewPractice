@@ -139,6 +139,6 @@ public class FanView extends View{
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        thread.stop();
+        counter=false;
     }
 }
