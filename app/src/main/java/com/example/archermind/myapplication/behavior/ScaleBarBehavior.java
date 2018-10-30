@@ -1,0 +1,111 @@
+package com.example.archermind.myapplication.behavior;
+
+import android.animation.Animator;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.view.ViewCompat;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.archermind.myapplication.R;
+
+/**
+ * Created by archermind on 18-10-30.
+ */
+
+public class ScaleBarBehavior extends AppBarLayout.Behavior {
+    ImageView imageView;
+    LinearLayout tvContent;
+    int startHeight;
+    int imageStartHeight;
+    int maxDistance;
+    int contentHeight;
+
+
+    public ScaleBarBehavior() {
+    }
+
+    public ScaleBarBehavior(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+
+    @Override
+    public boolean onLayoutChild(CoordinatorLayout parent, AppBarLayout abl, int layoutDirection) {
+
+        boolean result= super.onLayoutChild(parent, abl, layoutDirection);
+        initView(abl);
+        return  result;
+    }
+
+    private void initView(AppBarLayout abl) {
+         imageView= (ImageView) abl.findViewById(R.id.imageView);
+         tvContent= (LinearLayout) abl.findViewById(R.id.lin_content);
+         startHeight=abl.getHeight();
+        imageStartHeight=imageView.getHeight();
+        maxDistance=(int)(startHeight*0.6f);
+        contentHeight= tvContent.getHeight();
+    }
+
+    @Override
+    public boolean onStartNestedScroll(CoordinatorLayout parent, AppBarLayout child, View directTargetChild, View target, int nestedScrollAxes) {
+        if (target instanceof ImageView) return true;//这个布局就是middleLayout
+        return super.onStartNestedScroll(parent, child, directTargetChild, target, nestedScrollAxes);
+    }
+
+    @Override
+    public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target, int dx, int dy, int[] consumed) {
+            if(target!=null&&((dy>0&&child.getBottom()>startHeight)||(child.getBottom()>=startHeight&&dy<0))){
+                scaleView(child,dy);
+                return;
+            }
+        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed);
+
+    }
+
+    int totalDistance=0;
+    private void scaleView(AppBarLayout child,int dy) {
+        totalDistance=totalDistance+dy;
+        int  totalDistanceAb=Math.abs(totalDistance);
+          Math.min(totalDistanceAb,maxDistance);
+        float ratio=1+((1f)*Math.abs(totalDistanceAb>maxDistance?maxDistance:totalDistance))/startHeight;
+        Log.d(getClass().getName(),"radio:"+ratio+"totolDistance:"+totalDistance);
+//        imageView.setScaleY(ratio+1);
+//        imageView.setScaleY(ratio+1);
+        ViewCompat.setScaleX(imageView,ratio);
+        ViewCompat.setScaleY(imageView,ratio);
+//       CoordinatorLayout.LayoutParams layoutParams= (CoordinatorLayout.LayoutParams) child.getLayoutParams();
+//       layoutParams.height=layoutParams.height+(int)(ratio*imageStartHeight*2);
+//       child.setLayoutParams(layoutParams);
+        int adbCurrentBottom=startHeight+(int)((ratio-1)*imageStartHeight*0.5);
+        child.setBottom(adbCurrentBottom);
+        tvContent.setTop(adbCurrentBottom-contentHeight);
+        tvContent.setBottom(adbCurrentBottom);
+    }
+
+
+    @Override
+    public boolean onNestedPreFling(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target, float velocityX, float velocityY) {
+        if (velocityY > 100) {//当y速度>100,就秒弹回
+//            isAnimate = false;
+        }
+        return super.onNestedPreFling(coordinatorLayout, child, target, velocityX, velocityY);
+    }
+
+
+    @Override
+    public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout abl, View target) {
+//        recovery(abl);
+        super.onStopNestedScroll(coordinatorLayout, abl, target);
+    }
+
+
+
+
+}

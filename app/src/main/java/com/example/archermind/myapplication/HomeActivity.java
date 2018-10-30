@@ -2,7 +2,6 @@ package com.example.archermind.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -50,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 float percent = Math.abs(verticalOffset * 1.0f / appBarLayout.getTotalScrollRange());
-                Log.d(getClass().getName(), "percent:" + percent);
+//                Log.d(getClass().getName(), "percent:" + percent);
                 tvTitle.setAlpha(percent);
 //                StatusBarUtil.setColor(HomeActivity.this, Color.RED,200);
                 StatusBarUtil.setTranslucentForImageView(HomeActivity.this, (int) (255f * percent), null);            }
@@ -70,11 +69,11 @@ public class HomeActivity extends AppCompatActivity {
             //这里是重设我们的title布局的topMargin，StatusBarUtil提供了重设的方法，但是我们这里有两个布局
             //TODO 关于为什么不把Toolbar和@layout/layout_uc_head_title放到一起，是因为需要Toolbar来占位，防止AppBarLayout折叠时将title顶出视野范围
             int statusBarHeight = getStatusBarHeight(HomeActivity.this);
-            TextView tvTitle = findViewById(R.id.tv_title);
+            TextView tvTitle = (TextView) findViewById(R.id.tv_title);
             CollapsingToolbarLayout.LayoutParams lp1 = (CollapsingToolbarLayout.LayoutParams) tvTitle.getLayoutParams();
             lp1.topMargin = statusBarHeight;
             tvTitle.setLayoutParams(lp1);
-            Toolbar mToolBar = findViewById(R.id.toolbar);
+            Toolbar mToolBar = (Toolbar) findViewById(R.id.toolbar);
             CollapsingToolbarLayout.LayoutParams lp2 = (CollapsingToolbarLayout.LayoutParams) mToolBar.getLayoutParams();
             lp2.topMargin = statusBarHeight;
             mToolBar.setLayoutParams(lp2);

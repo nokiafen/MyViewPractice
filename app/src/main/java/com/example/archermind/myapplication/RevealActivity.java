@@ -35,8 +35,8 @@ public class RevealActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reveal);
-        imageView = findViewById(R.id.iv_imageview);
-        linearLayout = findViewById(R.id.line1);
+        imageView = (ImageView) findViewById(R.id.iv_imageview);
+        linearLayout = (LinearLayout) findViewById(R.id.line1);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         init();
