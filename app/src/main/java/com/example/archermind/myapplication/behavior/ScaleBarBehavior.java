@@ -68,6 +68,7 @@ public class ScaleBarBehavior extends AppBarLayout.Behavior {
         }
             if(target!=null&&((dy>0&&child.getBottom()>startHeight)||(child.getBottom()>=startHeight&&dy<0))){
                 scaleView(child,dy);
+                Log.d(getClass().getName(),"adbdy:"+child.getTop());
                 return;
             }
         super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed);
