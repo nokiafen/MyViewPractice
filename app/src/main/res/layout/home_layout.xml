@@ -54,14 +54,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/lin_content"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.5"
+                    android:layout_marginTop="250dp"
                     >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_collapseMode="parallax"
-                    app:layout_collapseParallaxMultiplier="0.5"
-                    android:layout_marginTop="250dp"
-
                     >
                     <TextView
                         android:layout_width="match_parent"
@@ -102,6 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/scrollerView"
             >
             <LinearLayout
                 android:layout_width="match_parent"
@@ -196,6 +196,16 @@
 
 
         </android.support.v4.widget.NestedScrollView>
+
+        <com.example.archermind.myapplication.views.CircleImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_avater"
+            app:layout_anchor="@id/lin_content"
+            app:layout_anchorGravity="top"
+            android:layout_marginLeft="20dp"
+            app:layout_behavior="@string/avater_scale_behavior"
+            ></com.example.archermind.myapplication.views.CircleImageView>
 
     </android.support.design.widget.CoordinatorLayout>
 
