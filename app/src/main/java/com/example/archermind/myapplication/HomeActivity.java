@@ -118,4 +118,8 @@ public class HomeActivity extends AppCompatActivity {
 //        startActivity(new Intent(HomeActivity.this,MainActivity.class));
     };
 
+    public void toRefreshBehaviorActivity(View view) {
+        startAc(null,RefreshBehaviorActivity.class);
+    }
+
 }

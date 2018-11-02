@@ -139,9 +139,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="MainActivity"
+                    android:text="RefreshBehaviorActivity"
                     android:gravity="center"
-                    android:onClick="toMainActivity"
+                    android:onClick="toRefreshBehaviorActivity"
                     />
                 <TextView
                     android:layout_width="match_parent"
