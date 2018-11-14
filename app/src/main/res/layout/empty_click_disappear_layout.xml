@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:text="left"
+        android:id="@+id/bt_left"
+        android:layout_gravity="center_vertical"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:text="right"
+        android:id="@+id/bt_right"
+        android:layout_gravity="center_vertical|right"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:text="top"
+        android:id="@+id/bt_top"
+        android:layout_gravity="center_horizontal|top"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:text="bottom"
+        android:id="@+id/bt_bottom"
+        android:layout_gravity="center_horizontal|bottom"
+        />
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"
+        android:id="@+id/center_color"
+        android:layout_height="100dp">
+    </FrameLayout>
+
+
+</FrameLayout>

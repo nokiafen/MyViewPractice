@@ -28,6 +28,10 @@
 
         <activity android:name="com.example.archermind.myapplication.SldingConfictActivity">
         </activity>
+      
+        <activity android:name="com.example.archermind.myapplication.EmptyViewTestActivity">
+           </activity>
+      
         <activity android:name="com.example.archermind.myapplication.RefreshBehaviorActivity">
         </activity>
     </application>
