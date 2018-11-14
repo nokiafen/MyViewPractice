@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.archermind.myapplication.adapter.HomeAdapter;
 import com.example.archermind.myapplication.views.AnimHelper;
 import com.example.archermind.myapplication.views.Utils;
 

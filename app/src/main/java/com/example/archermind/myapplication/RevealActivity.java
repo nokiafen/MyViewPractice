@@ -3,7 +3,6 @@ package com.example.archermind.myapplication;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,6 +18,7 @@ import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.archermind.myapplication.adapter.HomeAdapter;
 import com.example.archermind.myapplication.views.Utils;
 
 /**

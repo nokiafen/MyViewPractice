@@ -126,4 +126,8 @@ public class HomeActivity extends AppCompatActivity {
         startAc(null, EmptyViewTestActivity.class);
     }
 
+    public void toRefreshBehaviorActivity(View view) {
+        startAc(null,RefreshBehaviorActivity.class);
+    }
+
 }
