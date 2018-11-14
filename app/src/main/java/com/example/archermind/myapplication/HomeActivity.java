@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.archermind.myapplication.views.EmptyClickDisappearView;
 import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
@@ -51,7 +52,8 @@ public class HomeActivity extends AppCompatActivity {
 //                Log.d(getClass().getName(), "percent:" + percent);
                 tvTitle.setAlpha(percent);
 //                StatusBarUtil.setColor(HomeActivity.this, Color.RED,200);
-                StatusBarUtil.setTranslucentForImageView(HomeActivity.this, (int) (255f * percent), null);            }
+                StatusBarUtil.setTranslucentForImageView(HomeActivity.this, (int) (255f * percent), null);
+            }
         });
     }
 
@@ -82,19 +84,19 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void toMainActivity(View view) {
-        startAc(null,MainActivity.class);
+        startAc(null, MainActivity.class);
     }
 
     public void toRevealActivity(View view) {
-        startAc(null,RevealActivity.class);
+        startAc(null, RevealActivity.class);
     }
 
     public void toAnimTestActivity(View view) {
-        startAc(null,AnimTestActivity.class);
+        startAc(null, AnimTestActivity.class);
     }
 
     public void toSlidingConfictActivity(View view) {
-        startAc(null,SldingConfictActivity.class);
+        startAc(null, SldingConfictActivity.class);
     }
 
 
@@ -111,11 +113,17 @@ public class HomeActivity extends AppCompatActivity {
         return context.getResources().getDimensionPixelSize(resourceId);
     }
 
-    public void startAc(Bundle bundle,Class aclass){
-        Intent intent =new Intent(this,aclass);
-        intent.putExtras(bundle==null?new Bundle():bundle);
+    public void startAc(Bundle bundle, Class aclass) {
+        Intent intent = new Intent(this, aclass);
+        intent.putExtras(bundle == null ? new Bundle() : bundle);
         startActivity(intent);
 //        startActivity(new Intent(HomeActivity.this,MainActivity.class));
-    };
+    }
+
+    ;
+
+    public void toEmptyViewTestActivity(View view) {
+        startAc(null, EmptyViewTestActivity.class);
+    }
 
 }

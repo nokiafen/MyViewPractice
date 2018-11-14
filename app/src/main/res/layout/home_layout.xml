@@ -192,6 +192,13 @@
                     android:gravity="center"
                     android:onClick="toSlidingConfictActivity"
                     />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="EmptyViewTestActivity"
+                    android:gravity="center"
+                    android:onClick="toEmptyViewTestActivity"
+                    />
             </LinearLayout>
 
 
